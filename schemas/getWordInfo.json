@@ -1,0 +1,132 @@
+{
+  "description": "Sucess on getting word definition",
+  "type": "object",
+  "properties": {
+    "word": {
+      "type": "string"
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "definition": {
+            "type": "string"
+          },
+          "partOfSpeech": {
+            "type": "string"
+          },
+          "synonyms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "similarTo": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "derivation": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "typeOf": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hasTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "also": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "inCategory": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "antonyms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "usageOf": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "attribute": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "definition",
+          "partOfSpeech"
+        ]
+      }
+    },
+    "syllables": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "count",
+        "list"
+      ]
+    },
+    "pronunciation": {
+      "type": "object",
+      "properties": {
+        "all": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "all"
+      ]
+    },
+    "frequency": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "word",
+    "results",
+    "syllables",
+    "pronunciation",
+    "frequency"
+  ]
+}
