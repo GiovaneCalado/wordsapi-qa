@@ -6,13 +6,20 @@ import { faker } from '@faker-js/faker';
 const randomWord = faker.word.adjective()
 
 test.describe('Words API Testing', () => {
-  test('Get definition of random word', async ({ request }) => {
-    const response = await request.get(randomWord);
-    const responseBody = await response.json()
-    
-    expect(response).toBeOK()
-    expect(response.status()).toBe(200)
-    await validateContract(responseBody, 'getWordInfo.json')
+  const scenarios = [
+    { word: 'beautiful'},
+    { word: 'awful'},
+    { word: 'joyful'},
+  ];
+  scenarios.forEach(({ word }) => {
+    test(`Get definition of the word ${word}`, async ({ request }) => {
+      const response = await request.get(word);
+      const responseBody = await response.json()
+      
+      expect(response).toBeOK()
+      expect(response.status()).toBe(200)
+      await validateContract(responseBody, 'getWordInfo.json')
+    });
   });
 
   test('Get synonyms of random word', async ({ request }) => {
